@@ -1,0 +1,155 @@
+[
+  {
+    "nome": "Celular",
+    "preco": "99.99",
+    "descricao": "Celular de última geração",
+    "avaliacao": 1.64,
+    "imagens": [
+      {
+        "public_id": "products/1/1",
+        "url": "https://www.soundguys.com/wp-content/uploads/2021/09/HyperX-CloudX-Stinger-Core-feature-shot-scaled.jpg"
+      }
+    ],
+    "categoria": "Mobile",
+    "vendedor": "Elisson Eletrônics",
+    "estoque": 30,
+    "numeroAvaliacoes": 1,
+    "avaliacoes": []
+  },
+  {
+    "nome": "Smart TV",
+    "preco": "349.99",
+    "descricao": "Smart TV 4K de 55 polegadas",
+    "avaliacao": 4.5,
+    "imagens": [
+      {
+        "public_id": "products/2/1",
+        "url": "https://example.com/image2.jpg"
+      }
+    ],
+    "categoria": "TV",
+    "vendedor": "Elisson Eletrônics",
+    "estoque": 25,
+    "numeroAvaliacoes": 10,
+    "avaliacoes": []
+  },
+  {
+    "nome": "Laptop",
+    "preco": "799.99",
+    "descricao": "Laptop poderoso para produtividade",
+    "avaliacao": 4.0,
+    "imagens": [
+      {
+        "public_id": "products/3/1",
+        "url": "https://example.com/image3.jpg"
+      }
+    ],
+    "categoria": "Laptops",
+    "vendedor": "Elisson Eletrônics",
+    "estoque": 15,
+    "numeroAvaliacoes": 5,
+    "avaliacoes": []
+  },
+  {
+    "nome": "Câmera DSLR",
+    "preco": "599.99",
+    "descricao": "Câmera DSLR profissional",
+    "avaliacao": 4.8,
+    "imagens": [
+      {
+        "public_id": "products/4/1",
+        "url": "https://example.com/image4.jpg"
+      }
+    ],
+    "categoria": "cameras",
+    "vendedor": "Elisson Eletrônics",
+    "estoque": 20,
+    "numeroAvaliacoes": 8,
+    "avaliacoes": []
+  },
+  {
+    "nome": "Alto-falante Bluetooth",
+    "preco": "49.99",
+    "descricao": "Alto-falante portátil Bluetooth",
+    "avaliacao": 3.5,
+    "imagens": [
+      {
+        "public_id": "products/5/1",
+        "url": "https://example.com/image5.jpg"
+      }
+    ],
+    "categoria": "speaker",
+    "vendedor": "Elisson Eletrônics",
+    "estoque": 40,
+    "numeroAvaliacoes": 3,
+    "avaliacoes": []
+  },
+  {
+    "nome": "Tablet",
+    "preco": "199.99",
+    "descricao": "Tablet Android de 10 polegadas",
+    "avaliacao": 4.2,
+    "imagens": [
+      {
+        "public_id": "products/6/1",
+        "url": "https://example.com/image6.jpg"
+      }
+    ],
+    "categoria": "tablet",
+    "vendedor": "Elisson Eletrônics",
+    "estoque": 18,
+    "numeroAvaliacoes": 6,
+    "avaliacoes": []
+  },
+  {
+    "nome": "iPhone",
+    "preco": "799.99",
+    "descricao": "iPhone 13 Pro Max",
+    "avaliacao": 4.9,
+    "imagens": [
+      {
+        "public_id": "products/7/1",
+        "url": "https://example.com/image7.jpg"
+      }
+    ],
+    "categoria": "Mobile",
+    "vendedor": "Elisson Eletrônics",
+    "estoque": 22,
+    "numeroAvaliacoes": 12,
+    "avaliacoes": []
+  },
+  {
+    "nome": "TV OLED",
+    "preco": "1499.99",
+    "descricao": "TV OLED 65 polegadas",
+    "avaliacao": 4.7,
+    "imagens": [
+      {
+        "public_id": "products/8/1",
+        "url": "https://example.com/image8.jpg"
+      }
+    ],
+    "categoria": "TV",
+    "vendedor": "Elisson Eletrônics",
+    "estoque": 12,
+    "numeroAvaliacoes": 9,
+    "avaliacoes": []
+  },
+  {
+    "nome": "Notebook Gamer",
+    "preco": "1299.99",
+    "descricao": "Notebook Gamer com GPU dedicada",
+    "avaliacao": 4.5,
+    "imagens": [
+      {
+        "public_id": "products/9/1",
+        "url": "https://example.com/image9.jpg"
+      }
+    ],
+    "categoria": "Laptops",
+    "vendedor": "Elisson Eletrônics",
+    "estoque": 10,
+    "numeroAvaliacoes": 7,
+    "avaliacoes": []
+  }
+]

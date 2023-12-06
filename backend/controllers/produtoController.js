@@ -1,33 +1,46 @@
-const Product = require('../models/produto');
-
-const ErrorHandler = require('../utils/errorHandler');
-
+const Product = require('../models/produto.js');
 const APIFeatures = require('../utils/apiFeatures');
+const ErrorHandler = require('../utils/errorHandler');
+const catchAsyncErrors = require('../middleware/catchAsyncErrors.js');
+
+
 
 //criar um novo produto => /api/v1/produto/novo
-module.exports.novoProduto = async (req, res, next) => {
+exports.novoProduto = catchAsyncErrors(async (req, res, next) => {
+
+    req.body.user = req.user.id;
+
     const produto = await Product.create(req.body);
 
     res.status(201).json({
         sucess: true,
         produto
     });
-};
+});
 
 //busca todos os produtos => /api/v1/produtos
-exports.getProdutos = async (req, res, next) => {
+exports.getProdutos = catchAsyncErrors(async (req, res, next) => {
 
-    const products = await Product.find();
+    const resPerPage = 4;
+    const productCount = await Product.countDocuments();
+
+    const apiFeatures = new APIFeatures(Product.find(), req.query)
+        .search()
+        .filter()
+        .pagination(resPerPage)
+
+    const products = await apiFeatures.query;
 
     res.status(200).json({
         sucess: true,
         count: products.length,
+        productCount,
         products
     });
-}
+});
 
 //busca um produto pelo id => /api/v1/produto/:id
-exports.getProdutoId = async (req, res, next) => {
+exports.getProdutoId = catchAsyncErrors(async (req, res, next) => {
 
     const product = await Product.findById(req.params.id);
 
@@ -39,10 +52,10 @@ exports.getProdutoId = async (req, res, next) => {
         sucess: true,
         product
     });
-}
+});
 
 //atualiza um produto pelo id => /api/v1/produto/:id
-exports.updateProduto = async (req, res, next) => {
+exports.updateProduto = catchAsyncErrors(async (req, res, next) => {
 
     let product = await Product.findById(req.params.id);
 
@@ -60,9 +73,9 @@ exports.updateProduto = async (req, res, next) => {
         sucess: true,
         product
     });
-}
+});
 
-exports.deleteProduto = async (req, res, next) => {
+exports.deleteProduto = catchAsyncErrors(async (req, res, next) => {
 
     const product = await Product.findById(req.params.id);
 
@@ -76,4 +89,4 @@ exports.deleteProduto = async (req, res, next) => {
         sucess: true,
         message: 'Produto deletado com sucesso!'
     });
-}
+});

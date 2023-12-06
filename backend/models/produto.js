@@ -1,27 +1,27 @@
 const mongoose = require('mongoose');
 
-const produtosSchema = new mongoose.Schema({
-    nome: {
+const produtoSchema = new mongoose.Schema({
+    name: {
         type: String,
         required: [true, 'Por favor, insira o nome do produto'],
         trim: true,
         maxLength: [100, 'O nome do produto não pode exceder 100 caracteres']
     },
-    preco: {
+    price: {
         type: Number,
         required: [true, 'Por favor, insira o preço do produto'],
         maxLength: [5, 'O nome do produto não pode exceder 5 caracteres'],
         default: 0.0
     },
-    descricao: {
+    description: {
         type: String,
         required: [true, 'Por favor, insira a descrição do produto'],
     },
-    avaliacao: {
+    ratings: {
         type: Number,
         default: 0
     },
-    imagens: [
+    images: [
         {
             public_id: {
                 type: String,
@@ -33,7 +33,7 @@ const produtosSchema = new mongoose.Schema({
             }
         }
     ],
-    categoria: {
+    category: {
         type: String,
         required: [true, 'Por favor, insira a categoria do produto'],
         enum: {
@@ -48,23 +48,29 @@ const produtosSchema = new mongoose.Schema({
             message: 'Por favor, selecione uma categoria para o produto'
         }
     },
-    vendedor: {
+    seller: {
         type: String,
         required: [true, 'Por favor, insira o vendedor do produto']
     },
-    estoque: {
+    stock: {
         type: Number,
         required: [true, 'Por favor, insira o estoque do produto'],
         maxLength: [5, 'O estoque do produto não pode exceder 5 caracteres'],
         default: 0
     },
-    numeroAvaliacoes: {
+    numOfReviews: {
         type: Number,
         default: 0
     },
-    avaliacoes: [
+    reviews: [
         {
-            nome: {
+            user: {
+                type: mongoose.Schema.ObjectId,
+                ref: 'User',
+                required: true
+
+            },
+            name: {
                 type: String,
                 required: true
             },
@@ -72,17 +78,23 @@ const produtosSchema = new mongoose.Schema({
                 type: Number,
                 required: true
             },
-            comentario: {
+            comment: {
                 type: String,
                 required: true
             }
         }
     ],
-    criadoEm: {
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true
+
+    },
+    createdAt: {
         type: Date,
         default: Date.now
     }
 
 });
 
-module.exports = mongoose.model('Produtos', produtosSchema);
+module.exports = mongoose.model('Produtos', produtoSchema);

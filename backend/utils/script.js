@@ -1,10 +1,10 @@
-const Product = require('../models/produto');
+const Produto = require('../models/produto');
 
 const dotenv = require('dotenv');
 
 const connectDatabase = require('../config/database');
 
-const produtos = require('../data/produtos');
+const produtos = require('../data/produtos.json');
 
 // Setting dotenv file
 
@@ -14,17 +14,17 @@ connectDatabase();
 
 const seedProdutos = async () => {
     try {
-        await Product.deleteMany();
+        await Produto.deleteMany();
         console.log('Produtos deletados');
 
-        await Product.insertMany(produtos);
+        await Produto.insertMany(produtos);
         console.log('Todos os produtos foram adicionados');
 
         process.exit();
 
     } catch (error) {
-        console.log("algo deu errado");
-        process.exit();
+        console.error("Erro durante a execução do script:", error);
+        process.exit(1); // Encerra o processo com código de erro
     }
 }
 

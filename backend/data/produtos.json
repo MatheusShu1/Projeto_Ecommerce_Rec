@@ -1,155 +1,202 @@
 [
+  
   {
-    "nome": "Celular",
-    "preco": "99.99",
-    "descricao": "Celular de última geração",
-    "avaliacao": 1.64,
-    "imagens": [
-      {
-        "public_id": "products/1/1",
-        "url": "https://www.soundguys.com/wp-content/uploads/2021/09/HyperX-CloudX-Stinger-Core-feature-shot-scaled.jpg"
-      }
-    ],
-    "categoria": "Mobile",
-    "vendedor": "Elisson Eletrônics",
-    "estoque": 30,
-    "numeroAvaliacoes": 1,
-    "avaliacoes": []
-  },
-  {
-    "nome": "Smart TV",
-    "preco": "349.99",
-    "descricao": "Smart TV 4K de 55 polegadas",
-    "avaliacao": 4.5,
-    "imagens": [
-      {
-        "public_id": "products/2/1",
-        "url": "https://example.com/image2.jpg"
-      }
-    ],
-    "categoria": "TV",
-    "vendedor": "Elisson Eletrônics",
-    "estoque": 25,
-    "numeroAvaliacoes": 10,
-    "avaliacoes": []
-  },
-  {
-    "nome": "Laptop",
-    "preco": "799.99",
-    "descricao": "Laptop poderoso para produtividade",
-    "avaliacao": 4.0,
-    "imagens": [
+    "name": "Laptop SuperFast",
+    "price": "2599.99",
+    "description": "Laptop ultra rápido para desempenho máximo.",
+    "rating": 4.8,
+    "image": [
       {
         "public_id": "products/3/1",
         "url": "https://example.com/image3.jpg"
       }
     ],
-    "categoria": "Laptops",
-    "vendedor": "Elisson Eletrônics",
-    "estoque": 15,
-    "numeroAvaliacoes": 5,
-    "avaliacoes": []
+    "category": "Laptops",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 15,
+    "numOfReviews": 8,
+    "reviews": []
   },
   {
-    "nome": "Câmera DSLR",
-    "preco": "599.99",
-    "descricao": "Câmera DSLR profissional",
-    "avaliacao": 4.8,
-    "imagens": [
+    "name": "Smartphone Avançado",
+    "price": "699.99",
+    "description": "Um smartphone avançado com recursos de última geração.",
+    "rating": 4.5,
+    "image": [
+      {
+        "public_id": "products/1/1",
+        "url": "https://example.com/image1.jpg"
+      }
+    ],
+    "category": "Mobile",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 10,
+    "numOfReviews": 10,
+    "reviews": []
+  },
+  {
+    "name": "TV Ultra HD",
+    "price": "1299.99",
+    "description": "Desfrute de imagens incríveis com esta TV de resolução Ultra HD.",
+    "rating": 4.7,
+    "image": [
+      {
+        "public_id": "products/2/1",
+        "url": "https://example.com/image2.jpg"
+      }
+    ],
+    "category": "TV",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 20,
+    "numOfReviews": 15,
+    "reviews": []
+  },
+  {
+    "name": "Câmera de Ação HD",
+    "price": "299.99",
+    "description": "Capture todos os momentos emocionantes com esta câmera de ação em HD.",
+    "rating": 4.2,
+    "image": [
       {
         "public_id": "products/4/1",
         "url": "https://example.com/image4.jpg"
       }
     ],
-    "categoria": "cameras",
-    "vendedor": "Elisson Eletrônics",
-    "estoque": 20,
-    "numeroAvaliacoes": 8,
-    "avaliacoes": []
+    "category": "cameras",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 20,
+    "numOfReviews": 12,
+    "reviews": []
   },
   {
-    "nome": "Alto-falante Bluetooth",
-    "preco": "49.99",
-    "descricao": "Alto-falante portátil Bluetooth",
-    "avaliacao": 3.5,
-    "imagens": [
+    "name": "Caixa de Som Surround",
+    "price": "149.99",
+    "description": "Experimente o som surround imersivo com esta caixa de som de alta qualidade.",
+    "rating": 4.5,
+    "image": [
       {
         "public_id": "products/5/1",
         "url": "https://example.com/image5.jpg"
       }
     ],
-    "categoria": "speaker",
-    "vendedor": "Elisson Eletrônics",
-    "estoque": 40,
-    "numeroAvaliacoes": 3,
-    "avaliacoes": []
+    "category": "speaker",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 30,
+    "numOfReviews": 6,
+    "reviews": []
   },
   {
-    "nome": "Tablet",
-    "preco": "199.99",
-    "descricao": "Tablet Android de 10 polegadas",
-    "avaliacao": 4.2,
-    "imagens": [
+    "name": "Tablet Avançado Pro",
+    "price": "449.99",
+    "description": "Um tablet avançado com recursos profissionais para produtividade máxima.",
+    "rating": 4.0,
+    "image": [
       {
         "public_id": "products/6/1",
         "url": "https://example.com/image6.jpg"
       }
     ],
-    "categoria": "tablet",
-    "vendedor": "Elisson Eletrônics",
-    "estoque": 18,
-    "numeroAvaliacoes": 6,
-    "avaliacoes": []
+    "category": "tablet",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 40,
+    "numOfReviews": 10,
+    "reviews": []
   },
   {
-    "nome": "iPhone",
-    "preco": "799.99",
-    "descricao": "iPhone 13 Pro Max",
-    "avaliacao": 4.9,
-    "imagens": [
+    "name": "Smartphone Elite",
+    "price": "899.99",
+    "description": "O smartphone mais avançado com tecnologia de ponta.",
+    "rating": 4.7,
+    "image": [
       {
         "public_id": "products/7/1",
         "url": "https://example.com/image7.jpg"
       }
     ],
-    "categoria": "Mobile",
-    "vendedor": "Elisson Eletrônics",
-    "estoque": 22,
-    "numeroAvaliacoes": 12,
-    "avaliacoes": []
+    "category": "Mobile",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 25,
+    "numOfReviews": 15,
+    "reviews": []
   },
   {
-    "nome": "TV OLED",
-    "preco": "1499.99",
-    "descricao": "TV OLED 65 polegadas",
-    "avaliacao": 4.7,
-    "imagens": [
+    "name": "TV Curva 8K",
+    "price": "5699.99",
+    "description": "Desfrute de imagens incríveis com esta TV curva de resolução 8K.",
+    "rating": 4.9,
+    "image": [
       {
         "public_id": "products/8/1",
         "url": "https://example.com/image8.jpg"
       }
     ],
-    "categoria": "TV",
-    "vendedor": "Elisson Eletrônics",
-    "estoque": 12,
-    "numeroAvaliacoes": 9,
-    "avaliacoes": []
+    "category": "TV",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 12,
+    "numOfReviews": 20,
+    "reviews": []
   },
   {
-    "nome": "Notebook Gamer",
-    "preco": "1299.99",
-    "descricao": "Notebook Gamer com GPU dedicada",
-    "avaliacao": 4.5,
-    "imagens": [
+    "name": "Fones de Ouvido Sem Fio",
+    "price": "129.99",
+    "description": "Liberte-se dos fios com estes fones de ouvido sem fio de alta qualidade.",
+    "rating": 4.4,
+    "image": [
       {
         "public_id": "products/9/1",
         "url": "https://example.com/image9.jpg"
       }
     ],
-    "categoria": "Laptops",
-    "vendedor": "Elisson Eletrônics",
-    "estoque": 10,
-    "numeroAvaliacoes": 7,
-    "avaliacoes": []
+    "category": "speaker",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 18,
+    "numOfReviews": 8,
+    "reviews": []
+  },
+  {
+    "name": "Câmera DSLR Profissional",
+    "price": "1699.99",
+    "description": "Capture imagens profissionais com esta câmera DSLR de última geração.",
+    "rating": 4.6,
+    "image": [
+      {
+        "public_id": "products/10/1",
+        "url": "https://example.com/image10.jpg"
+      }
+    ],
+    "category": "cameras",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 15,
+    "numOfReviews": 12,
+    "reviews": []
+  },
+  {
+    "name": "Notebook UltraSlim",
+    "price": "1299.99",
+    "description": "Um notebook ultraleve e compacto para sua mobilidade.",
+    "rating": 4.3,
+    "image": [
+      {
+        "public_id": "products/11/1",
+        "url": "https://example.com/image11.jpg"
+      }
+    ],
+    "category": "Laptops",
+    "seller": "Elisson Eletrônics",
+    "user": "656fb4968203f90d0878d17c",
+    "stock": 22,
+    "numOfReviews": 10,
+    "reviews": []
   }
+ 
 ]

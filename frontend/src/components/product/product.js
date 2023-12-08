@@ -14,7 +14,7 @@ const product = ({ product }) => {
                 )}
                 <div className='card-body d-flex flex-column'>
                     <h5 className='card-title'>
-                        <Link to={`/api/v1/produto/${product._id}`}>{product.name}</Link>
+                        <Link to={`/api/v1/product/${product._id}`}>{product.name}</Link>
                     </h5>
 
                     <div className='ratings mt-auto'>
@@ -24,7 +24,7 @@ const product = ({ product }) => {
                         <span id='no_of_reviews'>({product.numOfReviews})</span>
                     </div>
                     <p className='card-text'>R${product.price}</p>
-                    <Link to={`/api/v1/produto/${product._id}`} id='view_btn' className='btn btn-block'>
+                    <Link to={`/api/v1/product/${product._id}`} id='view_btn' className='btn btn-block'>
                         Ver Detalhes
                     </Link>
                 </div>

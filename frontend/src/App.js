@@ -1,25 +1,53 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { lazy } from 'react';
 
 import Header from './components/layouts/header';
 import Footer from './components/layouts/footer';
-import Home from './components/home';
-import ProductDetails from './components/product/productDetails';
+
+const homeElement = lazy(() => import('./components/home'));
+const ProductDetailsElement = lazy(() => import('./components/product/productDetails'));
+const LoginElement = lazy(() => import('./components/user/Login'));
+const registerElement = lazy(() => import('./components/user/Register'));
+
+const routes = [
+  {
+    element: homeElement,
+    path: '/'
+  },
+  {
+    element: LoginElement,
+    path: '/login'
+  },
+  {
+    element: ProductDetailsElement,
+    path: '/product/:id'
+  },
+  {
+    element: registerElement,
+    path: '/register'
+  },
+  {
+    element: homeElement,
+    path: '/search/:keyword'
+  }
+]
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Header />
-        <div className='container container-fluid'>
+    <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/produto/:id" element={<ProductDetails />} />
-          </Routes>
-        </div>
-        <Footer />
-      </Router>
-    </div>
+        {
+          routes.map(route => (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={route.element}
+            />
+          ))
+        }
+      </Routes>
+    </Router>
   );
 }
 export default App;

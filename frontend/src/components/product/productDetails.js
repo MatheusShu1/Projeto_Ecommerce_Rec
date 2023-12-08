@@ -13,7 +13,7 @@ const ProductDetails = ({ match }) => {
         dispatch(getProductsDetails(match.params.id))
 
         if (error) {
-            alert(error)
+            (error)
             dispatch(clearErrors())
         }
     }, [dispatch, error, match.params.id])

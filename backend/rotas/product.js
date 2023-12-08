@@ -5,13 +5,13 @@ const { getProdutos, novoProduto, getProdutoId, updateProduto, deleteProduto, cr
 
 const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth');
 
-router.route('/produtos').get(getProdutos);
+router.route('/products').get(getProdutos);
 
-router.route('/produto/:id').get(getProdutoId);
+router.route('/product/:id').get(getProdutoId);
 
-router.route('/admin/produto/novo').post(isAuthenticatedUser, authorizeRoles('admin'), novoProduto);
+router.route('/admin/product/novo').post(isAuthenticatedUser, authorizeRoles('admin'), novoProduto);
 
-router.route('/admin/produto/:id')
+router.route('/admin/product/:id')
     .put(isAuthenticatedUser, authorizeRoles('admin'), updateProduto)
     .delete(isAuthenticatedUser, authorizeRoles('admin'), deleteProduto);
 

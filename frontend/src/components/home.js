@@ -9,19 +9,34 @@ import Pagination from 'react-js-pagination';
 const Home = ({ match }) => {
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [category, setCategory] = useState('');
+
+    const categories = [
+        'Mobile',
+        'TV',
+        'Laptops',
+        'cameras',
+        'speaker',
+        'tablet',
+    ];
 
     const dispatch = useDispatch();
 
-    const { loading, products, productsCount, resPerPage } = useSelector(state => state.products);
+    const { loading, products, productsCount, resPerPage, filteredProdcutsCount } = useSelector(state => state.products);
 
     const keyword = match.params.keyword
 
     useEffect(() => {
-        dispatch(getProducts(keyword, currentPage));
-    }, [keyword, dispatch, currentPage]);
+        dispatch(getProducts(keyword, currentPage, category));
+    }, [keyword, dispatch, currentPage, category]);
 
     function setCurrentPageNo(pageNumber) {
         setCurrentPage(pageNumber);
+    }
+
+    let count = productsCount;
+    if (keyword) {
+        count = filteredProdcutsCount;
     }
     return (
         <Fragment>
@@ -33,12 +48,45 @@ const Home = ({ match }) => {
 
                     <section id='products' className='container mt-5'>
                         <div className='row'>
-                            {products && products.map(product => (
-                                <Product product={product} key={product._id} />
-                            ))}
+                            {keyword ? (
+                                <Fragment>
+                                    <div className='col-6 col-md-3 mt-5 mb-5'>
+                                        <div className="px-5">
+                                            <h4 className="mb-3">Categorias</h4>
+                                            <ul className="pl-0">
+                                                {categories.map(category => (
+                                                    <li
+                                                        style={{
+                                                            cursor: 'pointer',
+                                                            listStyleType: 'none'
+                                                        }}
+                                                        key={category}
+                                                        onClick={() => setCategory(category)}
+                                                    >
+                                                        {category}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div className="col-6 col-md-9">
+                                        <div className="row">
+                                            {products && products.map(product => (
+                                                <Product product={product} key={product._id} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </Fragment>
+                            ) : (
+                                products && products.map(product => (
+                                    <Product product={product} key={product._id} />
+                                ))
+                            )}
+
+
                         </div>
                     </section>
-                    {resPerPage <= productsCount && (
+                    {resPerPage <= count && (
                         <div className="d-flex justify-content-center mt-5">
                             <Pagination
                                 activePage={currentPage}

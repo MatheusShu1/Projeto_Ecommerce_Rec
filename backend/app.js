@@ -8,13 +8,13 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Importação de rotas
-const produtos = require('./rotas/produto');
+const product = require('./rotas/product');
 const auth = require('./rotas/auth');
 const order = require('./rotas/order');
 
 
 
-app.use('/api/v1', produtos);
+app.use('/api/v1', product);
 app.use('/api/v1', auth);
 app.use('/api/v1', order);
 

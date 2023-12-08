@@ -1,53 +1,45 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { lazy } from 'react';
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./components/home";
+import Login from "./components/user/Login";
+import Register from "./components/user/Register";
 import Header from './components/layouts/header';
 import Footer from './components/layouts/footer';
+import ProductDetails from './components/product/productDetails';
 
-const homeElement = lazy(() => import('./components/home'));
-const ProductDetailsElement = lazy(() => import('./components/product/productDetails'));
-const LoginElement = lazy(() => import('./components/user/Login'));
-const registerElement = lazy(() => import('./components/user/Register'));
 
-const routes = [
-  {
-    element: homeElement,
-    path: '/'
-  },
-  {
-    element: LoginElement,
-    path: '/login'
-  },
-  {
-    element: ProductDetailsElement,
-    path: '/product/:id'
-  },
-  {
-    element: registerElement,
-    path: '/register'
-  },
-  {
-    element: homeElement,
-    path: '/search/:keyword'
-  }
-]
 
-function App() {
+export default function App() {
   return (
+
     <Router>
-          <Routes>
-        {
-          routes.map(route => (
-            <Route
-              key={route.path}
-              path={route.path}
-              element={route.element}
-            />
-          ))
-        }
-      </Routes>
+      <div className="App">
+        <Header />
+        <div className="clearfix">
+
+          <div className="contentArea">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/search/:keyword" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route exact path="/product/:id" component={ProductDetails} />
+              <Route
+                render={() => {
+                  return (
+                    <h1 className="text-center">
+                      404
+                      <br />
+                      Not Found
+                    </h1>
+                  );
+                }}
+              />
+            </Switch>
+          </div>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 }
-export default App;

@@ -18,7 +18,7 @@ const Login = ({ history }) => {
     useEffect(() => {
 
         if (isAuthenticated) {
-            history.push('/');
+            window.location.href = '/'
         }
 
         if (error) {

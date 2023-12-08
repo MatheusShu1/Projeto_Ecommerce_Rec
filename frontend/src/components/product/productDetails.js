@@ -11,36 +11,29 @@ const ProductDetails = ({ match }) => {
 
     useEffect(() => {
         dispatch(getProductsDetails(match.params.id))
-
         if (error) {
-            (error)
             dispatch(clearErrors())
         }
     }, [dispatch, error, match.params.id])
-
+    console.log(product.product?.name)
     return (
         <Fragment>
-            {loading ? <Loader /> : (
-                <Fragment>
-                    <MetaData title={product.name} />
-
+            <MetaData title={product.product?.name} />
                     <div className="row f-flex justify-content-around">
                         <div className="col-12 col-lg-5 img-fluid" id="product_image">
                             {product && product.images && (
-                                <img src={product.images} alt="sdf" height="500" width="500" />
+                        <img src={product.product?.images} alt="sdf" height="500" width="500" />
                             )}
                         </div>
-                        <div className="col-12 col-lg-5 mt-5">
-                            {product && (
-                                <h3>{product.name}</h3>
-                            )}
-                            <p id="product_id">Product # {product._id}</p>
+                <div className="col-12 col-lg-5 mt-5">
+                    <h3>{product.product?.name}</h3>
+                    <p id="product_id">Product # {product.product?._id}</p>
                             <hr />
                             <div className="rating-outer">
                                 <div className='rating-inner' style={{ width: `${(product.ratings / 5) * 100}%` }}></div> </div>
-                            <span id="no_of_reviews">({product.numOfViews})</span>
+                    <span id="no_of_reviews">({product.product?.numOfViews})</span>
                             <hr />
-                            <p id="product_price">R${product.price}</p>
+                    <p id="product_price">R${product.product?.price}</p>
                             <div className="stockCounter d-inline">
                                 <span className="btn btn-danger minus">-</span>
                                 <input type="number" className="form-control count d-inline" value="1" readOnly />
@@ -51,9 +44,9 @@ const ProductDetails = ({ match }) => {
                             <p>Status: <span id="stock_status">Em estoque</span></p>
                             <hr />
                             <h4 className="mt-2">Descrição:</h4>
-                            <p>{product.description}</p>
+                    <p>{product.product?.description}</p>
                             <hr />
-                            <p id="product_seller mb-3">Sold by: <strong>{product.seller}</strong></p>
+                    <p id="product_seller mb-3">Sold by: <strong>{product.product?.seller}</strong></p>
                             <button id="review_btn" type="button" className="btn btn-primary mt-4" data-toggle="modal" data-target="#ratingModal">
                                 Envie sua avaliação
                             </button>
@@ -86,9 +79,7 @@ const ProductDetails = ({ match }) => {
                                 </div>
                             </div>
                         </div>
-                    </div >
-                </Fragment>
-            )}
+            </div >
         </Fragment>
     )
 }

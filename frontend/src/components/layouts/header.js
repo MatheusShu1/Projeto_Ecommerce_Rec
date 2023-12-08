@@ -2,14 +2,15 @@ import React, { Fragment } from 'react';
 import '../../App.css';
 import { Route } from 'react-router-dom';
 import Search from './search';
-import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <Fragment>
             <nav className="navbar row">
                 <div className="col-12 col-md-3">
-                    <div className="navbar-brand">
-                        <img src="../images/logoMaior2.png" alt="logo principal" />
+                    <div className="navbar-brand" >
+                        <a href="/">
+                            <img src="../images/logoMaior2.png" alt="logo principal" />
+                        </a>
                     </div>
                 </div>
 
@@ -18,7 +19,7 @@ const Header = () => {
                 </div>
 
                 <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-                    <Link to="/login" className="btn" id="login_btn">Login</Link>
+                    <a href="/login" className="btn" id="login_btn">Login</a>
 
                     <span id="cart" className="ml-3">Carrinho</span>
                     <span className="ml-1" id="cart_count">2</span>

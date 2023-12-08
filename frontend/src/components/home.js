@@ -5,10 +5,17 @@ import { getProducts } from '../actions/productActions';
 import Product from './product/product';
 import Loader from './layouts/loader';
 import Pagination from 'react-js-pagination';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+
+const { createSliderWithTooltip } = Slider;
+const Range = createSliderWithTooltip(Slider.Range);
+
 
 const Home = ({ match }) => {
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [price, setPrice] = useState([1, 10000]);
     const [category, setCategory] = useState('');
 
     const categories = [
@@ -27,8 +34,9 @@ const Home = ({ match }) => {
     const keyword = match.params.keyword
 
     useEffect(() => {
-        dispatch(getProducts(keyword, currentPage, category));
-    }, [keyword, dispatch, currentPage, category]);
+        dispatch(getProducts(keyword, currentPage, price, category));
+
+    }, [keyword, dispatch, currentPage, price, category]);
 
     function setCurrentPageNo(pageNumber) {
         setCurrentPage(pageNumber);
@@ -38,6 +46,7 @@ const Home = ({ match }) => {
     if (keyword) {
         count = filteredProdcutsCount;
     }
+    console.log('key:', keyword);
     return (
         <Fragment>
             {loading ? <Loader /> : (
@@ -48,10 +57,28 @@ const Home = ({ match }) => {
 
                     <section id='products' className='container mt-5'>
                         <div className='row'>
+
                             {keyword ? (
                                 <Fragment>
                                     <div className='col-6 col-md-3 mt-5 mb-5'>
                                         <div className="px-5">
+                                            <Range
+                                                marks={{
+                                                    1: `R$1`,
+                                                    10000: `R$10000`
+                                                }}
+                                                min={1}
+                                                max={10000}
+                                                defaultValue={[1, 10000]}
+                                                tipFormatter={value => `R$${value}`}
+                                                tipProps={{
+                                                    placement: 'top',
+                                                    visible: true
+                                                }}
+                                                value={price}
+                                                onChange={price => setPrice(price)}
+                                            />:
+                                            <hr className='my-5' />
                                             <h4 className="mb-3">Categorias</h4>
                                             <ul className="pl-0">
                                                 {categories.map(category => (
@@ -72,14 +99,15 @@ const Home = ({ match }) => {
                                     <div className="col-6 col-md-9">
                                         <div className="row">
                                             {products && products.map(product => (
-                                                <Product product={product} key={product._id} />
+                                                <Product key={product._id} product={product} col={3} />
                                             ))}
                                         </div>
+
                                     </div>
                                 </Fragment>
                             ) : (
                                 products && products.map(product => (
-                                    <Product product={product} key={product._id} />
+                                    <Product key={product._id} product={product} />
                                 ))
                             )}
 

@@ -14,16 +14,14 @@ import {
 
 // export const getProducts = () => async (dispatch) => {
 
-export const getProducts = (keyword = "", currentPage = 1, category) => async (dispatch) => {
+export const getProducts = (keyword = '', currentPage = 1, price, category) => async (dispatch) => {
     try {
         dispatch({ type: ALL_PRODUCTS_REQUEST });
-
-        let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}`;
+        console.log('keyword:', keyword);
+        let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[lte]=${price[1]}&price[gte]=${price[0]}`;
         if (category) {
-            let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&category=${category}`;
-
+            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&category=${category}`;
         }
-
         const { data } = await axios.get(link);
 
         dispatch({
@@ -43,7 +41,7 @@ export const getProductsDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-        const { data } = await axios.get(`/api/v1/produtos/${id}`);
+        const { data } = await axios.get(`/api/v1/product/${id}`);
 
 
         dispatch({

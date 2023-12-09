@@ -1,13 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-
-import MetaData from '../layouts/MetaData'
 import Loader from '../layouts/loader'
+import MetaData from '../layouts/MetaData'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { login, clearErrors } from '../../actions/userActions'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Login = ({ history }) => {
+const Login = ({ history, location }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -15,14 +15,17 @@ const Login = ({ history }) => {
 
     const { isAuthenticated, error, loading } = useSelector(state => state.auth);
 
+    const redirect = location.search ? location.search.split('=')[1] : '/'
+
     useEffect(() => {
 
         if (isAuthenticated) {
-            window.location.href = '/'
+            history.push(redirect)
+            window.location.reload();
         }
 
         if (error) {
-            error(error);
+            toast.error(error);
             dispatch(clearErrors());
         };
     }, [dispatch, isAuthenticated, error, history]);
@@ -64,7 +67,7 @@ const Login = ({ history }) => {
                                     />
                                 </div>
 
-                                <Link to="/password/forgot" className="float-right mb-4">Esqueceu a senha?</Link>
+                                <a href="/password/forgot" className="float-right mb-4">Esqueceu a senha?</a>
 
                                 <button
                                     id="login_button"
@@ -75,7 +78,7 @@ const Login = ({ history }) => {
                                     LOGIN
                                 </button>
 
-                                <Link to="/register" className="float-right mt-3">Novo usuário?</Link>
+                                <a href="/register" className="float-right mt-3">Novo usuário?</a>
                             </form>
                         </div>
                     </div>

@@ -1,28 +1,49 @@
-import React, { Fragment, useEffect } from 'react'
-import Loader from '../layouts/loader'
+import React, { Fragment, useState, useEffect } from 'react'
 import MetaData from '../layouts/MetaData'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductsDetails, clearErrors } from '../../actions/productActions'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { addItemToCart } from '../../actions/cartActions';
 
 const ProductDetails = ({ match }) => {
     const dispatch = useDispatch()
-    const { loading, error, product } = useSelector(state => state.productDetails)
+    const { error, product } = useSelector(state => state.productDetails)
+    const [quantity, setQuantity] = useState(1)
 
     useEffect(() => {
         dispatch(getProductsDetails(match.params.id))
         if (error) {
+            toast.error(error);
             dispatch(clearErrors())
         }
     }, [dispatch, error, match.params.id])
     console.log(product.product?.name)
+
+    const addToCart = () => {
+        dispatch(addItemToCart(match.params.id, quantity))
+        toast.success('Produto adicionado ao carrinho')
+    }
+    const increaseQty = () => {
+        const count = document.querySelector('.count')
+        if (count.valueAsNumber >= product.product?.stock) return;
+        const qty = count.valueAsNumber + 1;
+        setQuantity(qty);
+    }
+    const decreaseQty = () => {
+        const count = document.querySelector('.count')
+        if (count.valueAsNumber <= 1) return;
+        const qty = count.valueAsNumber - 1;
+        count.value = qty;
+    }
     return (
         <Fragment>
             <MetaData title={product.product?.name} />
                     <div className="row f-flex justify-content-around">
                         <div className="col-12 col-lg-5 img-fluid" id="product_image">
-                            {product && product.images && (
-                        <img src={product.product?.images} alt="sdf" height="500" width="500" />
+                    {product && product.product?.images && (
+                        <img src={product.product?.images[0]?.url} alt="sdf" height="500" width="600" />
                             )}
                         </div>
                 <div className="col-12 col-lg-5 mt-5">
@@ -30,18 +51,18 @@ const ProductDetails = ({ match }) => {
                     <p id="product_id">Product # {product.product?._id}</p>
                             <hr />
                             <div className="rating-outer">
-                                <div className='rating-inner' style={{ width: `${(product.ratings / 5) * 100}%` }}></div> </div>
+                        <div className='rating-inner' style={{ width: `${(product.product?.ratings / 5) * 100}%` }}></div> </div>
                     <span id="no_of_reviews">({product.product?.numOfViews})</span>
                             <hr />
                     <p id="product_price">R${product.product?.price}</p>
                             <div className="stockCounter d-inline">
-                                <span className="btn btn-danger minus">-</span>
-                                <input type="number" className="form-control count d-inline" value="1" readOnly />
-                                <span className="btn btn-primary plus">+</span>
+                        <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
+                        <input type="number" className="form-control count d-inline" value={quantity} readOnly />
+                        <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
                             </div>
-                            <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4">Adicione no carrinho</button>
+                    <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0} onClick={addToCart}>Adicione no carrinho</button>
                             <hr />
-                            <p>Status: <span id="stock_status">Em estoque</span></p>
+                    <p>Status: <span id="stock_status" className={product.product?.stock > 0 ? 'greenColor' : 'redColor'}>Em estoque</span></p>
                             <hr />
                             <h4 className="mt-2">Descrição:</h4>
                     <p>{product.product?.description}</p>

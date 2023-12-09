@@ -4,11 +4,11 @@ const Search = ({ history }) => {
     const [keyword, setKeyword] = useState('');
 
     const searchHandler = (e) => {
-        e.preventDefault();
+
         if (keyword.trim()) {
-            window.location.href = `/search/${keyword}`;
+            history.push("/search/" + keyword)
         } else {
-            window.location.href = '/';
+            history.push('/')
         }
     }
     return (

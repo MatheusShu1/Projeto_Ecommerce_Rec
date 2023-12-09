@@ -22,6 +22,7 @@ import Shipping from './components/cart/Shipping';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import ConfirmOrder from './components/cart/ConfirmOrder';
 
 export default function App() {
 
@@ -46,6 +47,7 @@ export default function App() {
 
               <Route exact path="/cart" component={Cart} />
               <ProtectedRoute exact path="/shipping" component={Shipping} />
+              <ProtectedRoute exact path="/order/confirm" component={ConfirmOrder} />
 
 
               <Route exact path="/login" component={Login} />

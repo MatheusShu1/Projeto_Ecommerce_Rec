@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from './components/layouts/header';
@@ -23,6 +23,9 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import ConfirmOrder from './components/cart/ConfirmOrder';
+import ListOrders from './components/order/ListOrders';
+
+import Payment from './components/cart/Payment';
 
 export default function App() {
 
@@ -48,6 +51,7 @@ export default function App() {
               <Route exact path="/cart" component={Cart} />
               <ProtectedRoute exact path="/shipping" component={Shipping} />
               <ProtectedRoute exact path="/order/confirm" component={ConfirmOrder} />
+              <ProtectedRoute exact path="/payment" component={Payment} />
 
 
               <Route exact path="/login" component={Login} />
@@ -57,6 +61,8 @@ export default function App() {
               <ProtectedRoute exact path="/me/update" component={UpdateProfile} />
               <ProtectedRoute exact path="/password/update" component={UpdatePassword} />
               <ProtectedRoute exact path="/me" component={Profile} />        
+
+              <ProtectedRoute exact path="/orders/me" component={ListOrders} />
               <Route
                 render={() => {
                   return (

@@ -3,7 +3,7 @@ import { productsReducers, productDetailsReducer } from './reducers/productReduc
 import { authReducer, userReducer, forgotPasswordRecucer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
 import { thunk } from 'redux-thunk'; 
-
+import { myOrdersReducer, orderDetailsReducer } from './reducers/ordersReducers';
 const reducer = {
     // Redutores
     products: productsReducers,
@@ -12,6 +12,8 @@ const reducer = {
     user: userReducer,
     forgotPassword: forgotPasswordRecucer,
     cart: cartReducer,
+    myOrders: myOrdersReducer,
+    orderDetails: orderDetailsReducer,
 };
 
 let initialState = {

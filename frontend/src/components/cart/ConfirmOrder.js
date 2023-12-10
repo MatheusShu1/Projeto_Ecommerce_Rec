@@ -21,7 +21,7 @@ const ConfirmOrder = () => {
       totalPrice
     }
     sessionStorage.setItem('orderInfo', JSON.stringify(data))
-    window.location.href = '/'
+    window.location.href = '/payment'
   }
   return (
     <Fragment>

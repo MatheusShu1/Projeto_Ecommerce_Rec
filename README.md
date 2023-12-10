@@ -24,3 +24,7 @@ Para testar como administrador, vai ser preciso acessar um usuário pré definid
 
 Dessa forma o usuário é Email: admin@gmail.com
 senha: admin@admin.
+
+# Conteinerização Docker
+### navegue até a raiz do projeto (/projeto_ecommerce_rec) abra o terminal nessa pasta e execute o comando -> docker-compose up -d
+### Você poderá acessar o projeto na url http://localhost:3140

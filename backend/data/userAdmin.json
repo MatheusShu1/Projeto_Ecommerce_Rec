@@ -1,0 +1,10 @@
+{
+        "role": "user",
+        "name": "Administrador",
+        "email": "admin@admin.com",
+        "password": "$2a$10$Rg4PxfzRpedmO3b1e55.heJI/idayEdLB5dYLzGa9W5BscA5z6MZ2",
+        "avatar": {
+          "public_id": "avatars/default_avatar",
+          "url": "https://imgs.search.brave.com/qdCjYlJ38wgED0igJWjfmAQUtGyUtw6B65fwnpeX"
+        }
+}

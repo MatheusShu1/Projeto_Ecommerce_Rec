@@ -81,7 +81,7 @@ nav {
 }
 
 .card-title a:hover {
-  color: #fa9c23;
+  color: #1e7e34;
   text-decoration: none;
 }
 
@@ -94,7 +94,7 @@ nav {
 }
 
 #view_btn {
-  background-color: #fa9c23;
+  background-color: #1e7e34;
   color: white;
 }
 
@@ -163,7 +163,7 @@ footer {
 #cart_btn,
 #review_btn {
   border-radius: 2rem;
-  background-color: #fa9c23;
+  background-color: #1e7e34;
   border: none;
   padding: 0.5rem 2rem;
 }
@@ -209,8 +209,8 @@ footer {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fa9c23;
-  border-color: #fa9c23 transparent;
+  border: 6px solid #1e7e34;
+    border-color: #1e7e34 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 
@@ -251,15 +251,15 @@ footer {
 
 #checkout_btn,
 .review-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #1e7e34;
+    border-color: #1e7e34;
   margin-top: 2rem;
   border-radius: 5rem;
 }
 
 #view_order_details {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #1e7e34;
+    border-color: #1e7e34;
 }
 
 #order_summary {
@@ -311,8 +311,8 @@ footer {
 }
 
 .wrapper form .btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #1e7e34;
+    border-color: #1e7e34;
   color: white;
   margin-top: 2.5rem;
 }
@@ -391,7 +391,7 @@ footer {
 }
 
 .active-step {
-  background: #fa9c23;
+  background: #1e7e34;
   color: #fff;
 }
 
@@ -399,7 +399,7 @@ footer {
   float: left;
   width: 0;
   border-top: 20px solid transparent;
-  border-left: 15px solid #fa9c23;
+  border-left: 15px solid #1e7e34;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -449,8 +449,8 @@ footer {
 }
 
 #edit_profile {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #1e7e34;
+    border-color: #1e7e34;
 }
 
 /* Confirm Order */
@@ -461,8 +461,8 @@ footer {
 }
 
 .update-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #1e7e34;
+    border-color: #1e7e34;
   color: white;
 }
 
@@ -472,16 +472,16 @@ footer {
 
 /* Pagination */
 .page-item.active .page-link {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #1e7e34;
+    border-color: #1e7e34;
 }
 
 .page-link {
-  color: #fa9c23;
+  color: #1e7e34;
 }
 
 .page-link:hover {
-  color: #fa9c23;
+  color: #1e7e34;
 }
 
 /* Admin Sidebar */

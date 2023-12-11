@@ -27,6 +27,7 @@ import Dashboard from './components/admin/dashboard';
 import Payment from './components/cart/Payment';
 import ProductList from './components/admin/ProductList';
 import NewProduct from './components/admin/newProduct';
+import UpdateProduct from './components/admin/updateProduct';
 
 export default function App() {
 
@@ -60,6 +61,8 @@ export default function App() {
           <ProtectedRoute exact path="/dashboard" isAdmin={true} component={Dashboard} />
           <ProtectedRoute exact path="/admin/products" isAdmin={true} component={ProductList} />
           <ProtectedRoute exact path="/admin/product/novo" isAdmin={true} component={NewProduct} />
+          <ProtectedRoute exact path="/admin/product/novo" isAdmin={true} component={NewProduct} />
+          <ProtectedRoute exact path="/admin/product/:id" isAdmin={true} component={UpdateProduct} />
         </Switch>
         <Footer />
         <ToastContainer />

@@ -21,11 +21,12 @@ import store from './store';
 import Shipping from './components/cart/Shipping';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import ConfirmOrder from './components/cart/ConfirmOrder';
 import ListOrders from './components/order/ListOrders';
-
+import Dashboard from './components/admin/dashboard';
 import Payment from './components/cart/Payment';
+import ProductList from './components/admin/ProductList';
+import NewProduct from './components/admin/newProduct';
 
 export default function App() {
 
@@ -40,43 +41,26 @@ export default function App() {
     <Router>
       <div className="App">
         <Header />
-        <div className="clearfix">
-
-          <div className="contentArea">
-            <Switch>
+        <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/search/:keyword" component={Home} />
-              <Route exact path="/product/:id" component={ProductDetails} />
-
+          <Route exact path="/product/:id" component={ProductDetails} />
               <Route exact path="/cart" component={Cart} />
               <ProtectedRoute exact path="/shipping" component={Shipping} />
               <ProtectedRoute exact path="/order/confirm" component={ConfirmOrder} />
-              <ProtectedRoute exact path="/payment" component={Payment} />
-
-
+          <ProtectedRoute exact path="/payment" component={Payment} />
               <Route exact path="/login" component={Login} />
               <Route path="/register" component={Register} />
               <Route exact path="/password/forgot" component={ForgotPassword} />
               <Route exact path="/password/reset/:token" component={NewPassword} />
               <ProtectedRoute exact path="/me/update" component={UpdateProfile} />
               <ProtectedRoute exact path="/password/update" component={UpdatePassword} />
-              <ProtectedRoute exact path="/me" component={Profile} />        
-
-              <ProtectedRoute exact path="/orders/me" component={ListOrders} />
-              <Route
-                render={() => {
-                  return (
-                    <h1 className="text-center">
-                      404
-                      <br />
-                      Not Found
-                    </h1>
-                  );
-                }}
-              />
-            </Switch>
-          </div>
-        </div>
+          <ProtectedRoute exact path="/me" component={Profile} />        
+          <ProtectedRoute exact path="/orders/me" component={ListOrders} />
+          <ProtectedRoute exact path="/dashboard" isAdmin={true} component={Dashboard} />
+          <ProtectedRoute exact path="/admin/products" isAdmin={true} component={ProductList} />
+          <ProtectedRoute exact path="/admin/product/novo" isAdmin={true} component={NewProduct} />
+        </Switch>
         <Footer />
         <ToastContainer />
       </div>

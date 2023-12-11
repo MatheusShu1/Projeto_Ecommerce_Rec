@@ -1,4 +1,4 @@
-Local host sem docker.
+## Local host sem docker.
 
 Para iniciar, primeiro deve-se baixar o mongodb para conexão com o banco.
 
@@ -22,11 +22,10 @@ Clique em Login, e crie um usuario para acessar as funcionalidades.
 
 Para testar como administrador, vai ser preciso acessar um usuário pré definido no login.
 
-Dessa forma o usuário é Email: admin@gmail.com
-senha: admin@admin.
-
 # Conteinerização Docker
+
 ### navegue até a raiz do projeto (/projeto_ecommerce_rec) abra o terminal nessa pasta e execute o comando -> docker-compose up -d
+### Quando realizar alguma alteração no projeto e o conteiner ja estiver criado utilizar -> docker-compose up -d --force-recreate para recriar o contêiner
 ### Você poderá acessar o projeto na url http://localhost:3140
 ### Usuário administrador:
 #### Email: admin@admin.com

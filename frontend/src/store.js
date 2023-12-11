@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { productsReducers, productDetailsReducer } from './reducers/productReducers';
+import { productsReducers, productDetailsReducer, newReviewReducer, newProductReducer, productReducer } from './reducers/productReducers';
 import { authReducer, userReducer, forgotPasswordRecucer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
 import { thunk } from 'redux-thunk'; 
@@ -14,6 +14,9 @@ const reducer = {
     cart: cartReducer,
     myOrders: myOrdersReducer,
     orderDetails: orderDetailsReducer,
+    newReview: newReviewReducer,
+    newProduct: newProductReducer,
+    product: productReducer,
 };
 
 let initialState = {

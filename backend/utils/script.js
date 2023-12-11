@@ -30,6 +30,12 @@ const seedProdutos = async () => {
 }
 
 const createAdmin = async () => {
+    const existingAdmin = await User.findOne({ isAdmin: true });
+    // Se já existir, imprime uma mensagem e encerra a função
+    if (existingAdmin) {
+        console.log('Usuário administrador já existe. Nenhuma ação adicional necessária.');
+        return;
+    }
     try {
         await User.insertMany(admin);
         console.log('Usuário inicial administrador criado.')

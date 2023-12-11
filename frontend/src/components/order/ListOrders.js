@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { myOrders, clearErrors } from '../../actions/ordersActions';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { addItemToCart } from '../../actions/cartActions';
 
 const ListOrders = () => {
     const dispatch = useDispatch();
@@ -61,12 +60,8 @@ const ListOrders = () => {
                 numOfItems: order.orderItems.length, // Número de itens na ordem
                 totalPrice: `$${order.totalPrice}`, // Total da ordem
                 createdAt: String(order.createdAt).substring(0, 10),
-                orderStatus: order.orderStatus && String(order.orderStatus).includes('Delivered') ? (
-                    <p className="text-success">{order.orderStatus}</p>
-                ) : (
-                    <p className="text-danger">{order.orderStatus}</p>
-                ),
-                actions: <button className="btn btn-primary btn-sm" onClick={() => dispatch(addItemToCart(order.cart))}>Detalhes</button>
+                orderStatus: order.orderStatus
+
             })
         });
         return data;
@@ -102,9 +97,6 @@ const ListOrders = () => {
                                 ) : (
                                     <p className="text-danger">{order.orderStatus}</p>
                                 )}
-                            </td>
-                            <td className="text-center">
-                                <button className="btn btn-primary btn-sm" onClick={() => dispatch(addItemToCart(order.cart))}>Detalhes</button>
                             </td>
                         </tr>
                     ))}

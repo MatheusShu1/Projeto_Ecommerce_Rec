@@ -25,7 +25,14 @@ services:
       MONGO_URL: "mongodb://admin:admin123@mongodb:27017/ecommerce"
     depends_on:
       - mongodb
-    command: ["sh", "-c", "npm run seeder && node ./backend/server.js"]
+    command:
+      [
+        "sh",
+        "-c",
+        "npm run seeder && node ./backend/server.js"
+      ]
+    volumes:
+      - ./backend:/app/backend
     networks:
       - rede
 
@@ -35,10 +42,11 @@ services:
       context: ./frontend
     ports:
       - "3140:3000"
-    command: ["sh", "-c", "npm start"]
+    command: [ "sh", "-c", "npm start" ]
+    volumes:
+      - ./frontend:/app/frontend
     networks:
       - rede
 
 networks:
   rede:
-

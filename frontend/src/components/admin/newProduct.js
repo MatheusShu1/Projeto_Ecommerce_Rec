@@ -52,8 +52,8 @@ const NewProduct = ({ history }) => {
         formData.set('category', category);
         formData.set('stock', stock);
         formData.set('seller', seller);
-        formData.set('imageUrl', imageUrl);
-        formData.set('imagePublicId', imagePublicId);
+        formData.set('images.url', imageUrl);
+        formData.set('images.public_id', imagePublicId);
         dispatch(newProduct(formData));
     }
 
@@ -151,12 +151,13 @@ const NewProduct = ({ history }) => {
                                     onChange={handlePublicIdChange}
                                 />
                                 <br />
-                                <buttom
+                                <button
                                     id="login_button"
                                     type="submit"
-                                    className="btn btn-block py-3"                                >
+                                    className="btn btn-block py-3" 
+                                    >
                                     CRIAR
-                                </buttom>
+                                </button>
                             </form>
                         </div>
                     </Fragment>

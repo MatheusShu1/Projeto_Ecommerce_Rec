@@ -84,6 +84,7 @@ const ProductList = ({ history }) => {
 
     const deleteProductHandler = (id) => {
         dispatch(deleteProduct(id));
+        window.location.reload()
     }
 
 

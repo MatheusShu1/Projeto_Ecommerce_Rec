@@ -5,10 +5,10 @@
     "price": "2599.99",
     "description": "Laptop ultra rápido para desempenho máximo.",
     "rating": 4.8,
-    "images": [
+    "image": [
       {
         "public_id": "products/3/1",
-        "url": "https://m.media-amazon.com/images/I/71g8JT5cK+L._AC_SL1500_.jpg"
+        "url": "https://example.com/image3.jpg"
       }
     ],
     "category": "Laptops",
@@ -23,10 +23,10 @@
     "price": "699.99",
     "description": "Um smartphone avançado com recursos de última geração.",
     "rating": 4.5,
-    "images": [
+    "image": [
       {
         "public_id": "products/1/1",
-        "url": "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/c/e/celular-smartphone-xiaomi-redmi-note-12-4g-snapdragon-685-4gb-ram-128gb_816358.jpg"
+        "url": "https://example.com/image1.jpg"
       }
     ],
     "category": "Mobile",
@@ -41,10 +41,10 @@
     "price": "1299.99",
     "description": "Desfrute de imagens incríveis com esta TV de resolução Ultra HD.",
     "rating": 4.7,
-    "images": [
+    "image": [
       {
         "public_id": "products/2/1",
-        "url": "https://m.media-amazon.com/images/I/41Its6ayvJL._AC_.jpg"
+        "url": "https://example.com/image2.jpg"
       }
     ],
     "category": "TV",
@@ -59,10 +59,10 @@
     "price": "299.99",
     "description": "Capture todos os momentos emocionantes com esta câmera de ação em HD.",
     "rating": 4.2,
-    "images": [
+    "image": [
       {
         "public_id": "products/4/1",
-        "url": "https://optisom.vteximg.com.br/arquivos/ids/167726-1200-1200/CAER524105-0.jpg?v=637405270852530000"
+        "url": "https://example.com/image4.jpg"
       }
     ],
     "category": "cameras",
@@ -77,10 +77,10 @@
     "price": "149.99",
     "description": "Experimente o som surround imersivo com esta caixa de som de alta qualidade.",
     "rating": 4.5,
-    "images": [
+    "image": [
       {
         "public_id": "products/5/1",
-        "url": "https://novolare.ipoomweb.com.br/img-produto/1000/103608/4/caixa+de+som+amplificada+mondial+cm+700+700w.jpg"
+        "url": "https://example.com/image5.jpg"
       }
     ],
     "category": "speaker",
@@ -95,10 +95,10 @@
     "price": "449.99",
     "description": "Um tablet avançado com recursos profissionais para produtividade máxima.",
     "rating": 4.0,
-    "images": [
+    "image": [
       {
         "public_id": "products/6/1",
-        "url": "https://m.media-amazon.com/images/I/61sUZOI3icL._AC_UF894,1000_QL80_.jpg"
+        "url": "https://example.com/image6.jpg"
       }
     ],
     "category": "tablet",
@@ -113,10 +113,10 @@
     "price": "899.99",
     "description": "O smartphone mais avançado com tecnologia de ponta.",
     "rating": 4.7,
-    "images": [
+    "image": [
       {
         "public_id": "products/7/1",
-        "url": "https://i.zst.com.br/thumbs/12/14/39/-932900727.jpg"
+        "url": "https://example.com/image7.jpg"
       }
     ],
     "category": "Mobile",
@@ -131,10 +131,10 @@
     "price": "5699.99",
     "description": "Desfrute de imagens incríveis com esta TV curva de resolução 8K.",
     "rating": 4.9,
-    "images": [
+    "image": [
       {
         "public_id": "products/8/1",
-        "url": "https://www.aquivendemos.com.br/app/fotos/145a184c523fa0ea043d83a41278f90c.jpg"
+        "url": "https://example.com/image8.jpg"
       }
     ],
     "category": "TV",
@@ -149,10 +149,10 @@
     "price": "129.99",
     "description": "Liberte-se dos fios com estes fones de ouvido sem fio de alta qualidade.",
     "rating": 4.4,
-    "images": [
+    "image": [
       {
         "public_id": "products/9/1",
-        "url": "https://m.media-amazon.com/images/I/315-TkqfelL._AC_UF1000,1000_QL80_.jpg"
+        "url": "https://example.com/image9.jpg"
       }
     ],
     "category": "speaker",
@@ -167,10 +167,10 @@
     "price": "1699.99",
     "description": "Capture imagens profissionais com esta câmera DSLR de última geração.",
     "rating": 4.6,
-    "images": [
+    "image": [
       {
         "public_id": "products/10/1",
-        "url": "https://files.tecnoblog.net/wp-content/uploads/2023/05/camera-dslr-canon-2.jpg"
+        "url": "https://example.com/image10.jpg"
       }
     ],
     "category": "cameras",
@@ -185,10 +185,10 @@
     "price": "1299.99",
     "description": "Um notebook ultraleve e compacto para sua mobilidade.",
     "rating": 4.3,
-    "images": [
+    "image": [
       {
         "public_id": "products/11/1",
-        "url": "https://s2-techtudo.glbimg.com/6mnMpPbIY4zbQxR2wzyXkw4QuoU=/0x0:640x360/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/3/N/Qdz4tgR1OaLq4QWxLJRA/lg-gram-ultraslim-01.jpg"
+        "url": "https://example.com/image11.jpg"
       }
     ],
     "category": "Laptops",

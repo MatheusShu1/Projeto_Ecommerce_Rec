@@ -1,12 +1,11 @@
-const Produto = require('../models/product');
-const User = require('../models/user');
+const Produto = require('../models/produto');
 
 const dotenv = require('dotenv');
 
 const connectDatabase = require('../config/database');
 
 const produtos = require('../data/produtos.json');
-const admin = require ('../data/userAdmin.json');
+
 // Setting dotenv file
 
 dotenv.config({ path: 'backend/config/config.env' })
@@ -29,20 +28,4 @@ const seedProdutos = async () => {
     }
 }
 
-const createAdmin = async () => {
-    const existingAdmin = await User.findOne({ isAdmin: true });
-    // Se já existir, imprime uma mensagem e encerra a função
-    if (existingAdmin) {
-        console.log('Usuário administrador já existe. Nenhuma ação adicional necessária.');
-        return;
-    }
-    try {
-        await User.insertMany(admin);
-        console.log('Usuário inicial administrador criado.')
-    } catch (error) {
-        console.error("Erro durante a execução do Insert de usuário inicial:", error);
-        process.exit(1); // Encerra o processo com código de erro
-    }
-}
 seedProdutos();
-createAdmin();

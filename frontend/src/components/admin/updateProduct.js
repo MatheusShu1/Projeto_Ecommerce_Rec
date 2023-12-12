@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import MetaData from './layouts/MetaData';
+import MetaData from '../layouts/MetaData';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductsDetails, clearErrors, updateProduct } from '../actions/productActions';
+import { getProductsDetails, clearErrors, updateProduct } from '../../actions/productActions';
 import { UPDATE_PRODUCT_RESET } from '../../constants/productConstants';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -107,7 +107,7 @@ const UpdateProduct = ({ match, history }) => {
                                         type="text"
                                         id="name_field"
                                         className="form-control"
-                                        value={name}
+                                        value={product.name}
                                         onChange={(e) => setName(e.target.value)}
                                     />
                                 </div>
@@ -118,7 +118,7 @@ const UpdateProduct = ({ match, history }) => {
                                         type="text"
                                         id="price_field"
                                         className="form-control"
-                                        value={price}
+                                        value={product.price}
                                         onChange={(e) => setPrice(e.target.value)}
                                     />
                                 </div>
@@ -144,7 +144,7 @@ const UpdateProduct = ({ match, history }) => {
                                         type="number"
                                         id="stock_field"
                                         className="form-control"
-                                        value={stock}
+                                        value={product.stock}
                                         onChange={(e) => setStock(e.target.value)}
                                     />
                                 </div>
@@ -154,7 +154,7 @@ const UpdateProduct = ({ match, history }) => {
                                         type="text"
                                         id="seller_field"
                                         className="form-control"
-                                        value={seller}
+                                        value={product.seller}
                                         onChange={(e) => setSeller(e.target.value)}
                                     />
                                 </div>

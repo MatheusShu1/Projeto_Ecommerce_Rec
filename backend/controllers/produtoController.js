@@ -1,4 +1,4 @@
-const Product = require('../models/produto.js');
+const Product = require('../models/product.js');
 const APIFeatures = require('../utils/apiFeatures');
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors.js');
@@ -21,20 +21,39 @@ exports.novoProduto = catchAsyncErrors(async (req, res, next) => {
 //busca todos os produtos => /api/v1/produtos
 exports.getProdutos = catchAsyncErrors(async (req, res, next) => {
 
-    const resPerPage = 4;
-    const productCount = await Product.countDocuments();
+    const resPerPage = 8;
+    const productsCount = await Product.countDocuments();
 
     const apiFeatures = new APIFeatures(Product.find(), req.query)
         .search()
         .filter()
-        .pagination(resPerPage)
 
-    const products = await apiFeatures.query;
+    let products = await apiFeatures.query;
+    let filteredProductsCount = products.length;
+
+    apiFeatures.pagination(resPerPage);
+
+    products = await apiFeatures.query;
+
+    setTimeout(() => {
+        res.status(200).json({
+            sucess: true,
+            productsCount,
+            resPerPage,
+            filteredProductsCount,
+            products
+        });
+    }, 2000);
+
+});
+
+//busca todos os produtos (admin) => /api/v1/admin/produtos
+exports.getAdminProdutos = catchAsyncErrors(async (req, res, next) => {
+
+    const products = await Product.find();
 
     res.status(200).json({
         sucess: true,
-        count: products.length,
-        productCount,
         products
     });
 });

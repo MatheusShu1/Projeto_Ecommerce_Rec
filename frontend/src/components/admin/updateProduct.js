@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import MetaData from './layouts/MetaData';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductsDetails, clearErrors, updateProduct } from '../actions/productActions';
+import { getProductsDetails, clearErrors, updateProduct } from '../../actions/productActions';
 import { UPDATE_PRODUCT_RESET } from '../../constants/productConstants';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -91,7 +90,6 @@ const UpdateProduct = ({ match, history }) => {
 
     return (
         <Fragment>
-            <MetaData title={'Atualizar Produto'} />
             <div className="row">
                 <div className="col-12 col-md-2">
                 </div>
